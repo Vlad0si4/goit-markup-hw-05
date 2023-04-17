@@ -11,7 +11,8 @@
       --color-grey: #2e2f42;
       --color-white: #ffffff;
       --color-dairy: #fcfcfc;
-}
+} 
+
 
 /**
   |============================
@@ -65,6 +66,9 @@ body {
 
 }
 
+
+
+
 .container {
   max-width: 1158px;
   padding: 0 15px;
@@ -93,11 +97,14 @@ body {
 .header-menu {
   display: flex;
   
+  
 }
 .menu-item:not(:last-child) {
   margin-right: 40px;
 }
 .header-nav {
+position: relative;
+
   display: flex;
   align-items: center;
   margin-right: auto;
@@ -111,7 +118,24 @@ body {
   padding-bottom: 24px;
 
 }
+.menu-item {
+  position: relative;
+ 
+}
 
+.current::after {
+  content: "";
+  position: absolute;
+  display: block;
+
+  background-color: #4d5ae5;
+  border-radius: 4px;
+
+  width: 100%;
+  bottom: 0;
+  height: 4px;
+
+}
 /**
   |============================
   | LOGO
@@ -163,9 +187,24 @@ body {
   |============================
 */
 
+/* active state */
+.header :hover, .header :focus,
+.filters :hover, .filters :focus,
+.footer :hover, .footer :focus,
+.hero :hover, .hero :focus,
+.team :hover, .team :focus,
+.customers :hover, .customers :focus {
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
 .address .menu-link:hover,
  .address .menu-link:focus{
-  color: var(--color-ocean)
+  color: var(--color-ocean);
+
 }
 .menu-link:hover,
 .menu-link:focus {
@@ -182,6 +221,7 @@ body {
 .button:hover,
  .button:focus{
   background-color: var(--color-ocean);
+
 }
 .filter-button:hover,
  .filter-button:focus {
@@ -207,6 +247,7 @@ box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
 .social-link.how-ocean:hover,
 .social-link.how-ocean:focus{
   background-color: var(--color-ocean);
+  
 }
 .social-link.how-green:hover,
 .social-link.how-green:focus {
@@ -473,7 +514,6 @@ margin-bottom: 8px;
 
 }
 .customers-item {
-
   width: calc((100% - 120px) / 6);
   height: 88px;
 }
