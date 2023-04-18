@@ -666,7 +666,9 @@ background-color: var(--color-iris);
   background-color: rgba(46, 47, 66, 0.4);
 
   opacity: 1;
-  transition: opacity 400ms, cubic-bezier(0.69, 1.62, 0.71, 0.18)
+  transition: opacity, visibility;
+  transition-duration:  400ms;
+  transition-timing-function:  linear;
 
 }
 .backdrop.is-hidden {
@@ -674,7 +676,7 @@ background-color: var(--color-iris);
   pointer-events: none;
   visibility: hidden;
 
-transition-delay: 400ms;
+  transition-delay: 400ms;
 }
 
 
@@ -684,7 +686,9 @@ transition-delay: 400ms;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  min-width: 408px;
+  padding:  20px;
+
+  width: 408px;
   min-height: 576px;
 
   background-color: var(--color-dairy);
@@ -692,34 +696,43 @@ transition-delay: 400ms;
   0px 1px 3px rgba(0, 0, 0, 0.12),
   0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
   opacity: 1;
   transition: transform 300ms cubic-bezier(0.18, 0.13, 0.61, 0.58) 
 
 }
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.2);
-  opacity: 0;
-  transition: transform 600ms  cubic-bezier(0.19, 0.16, 0.46, 0.57) 200ms
 
-}
-.modal-icon {
+.modal-btn{
   position: absolute;
   top: 0;
   right: 0;
   transform: translateX(-100%) translateY(100%);
 
-    display: block;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
 
   fill: var(--color-navy-blue);
   background-color: var(--color-cornflower);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   width: 24px;
-  height: 24px;
+  height: 24px
+}   
 
-
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  transition: transform 600ms cubic-bezier(0.19, 0.16, 0.46, 0.57) 200ms
 }
+
+/* .modal-icon {
+  fill: var(--color-navy-blue);
+  background-color: var(--color-cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px
+
+} */
