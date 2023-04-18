@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -50,8 +51,8 @@
 
     <section class="hero container">
       <div class="hero-content container">
-        <h1 class="hero-title">Effective Solutions Your Business</h1>
-        <button class="hero-button button" type="button">Order Service</button>
+        <h1 class="hero-title animate__animated animate__bounce">Effective Solutions Your Business</h1>
+        <button class="hero-button button" type="button" data-modal-open>Order Service</button>
       </div>
     </section>
 
@@ -428,6 +429,20 @@
     </div>
   </footer>
 
+  <!-- ==============MODAL WINDOW============ -->
+  <div class="backdrop is-hidden" data-modal>
+
+    <div class="modal ">
+      <button class="modal-btn" type="button" data-modal-close>
+        <svg class="modal-icon" width="24" height="24">
+          <use href="./images/icon.svg#close">
+          </use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
